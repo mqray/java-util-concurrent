@@ -15,18 +15,28 @@ import java.util.List;
 public class Demo1 {
 
     public static void main(String[] args) {
+
+        Integer i = new Integer(1000);
+        Integer j = new Integer(1000);
+        System.out.println(i.hashCode()==j.hashCode());
+        System.out.println(i.equals(j));
+
         User u1 = new User(1,"mqray1",12);
-        User u2 = new User(2,"mqray2",14);
-        User u3 = new User(3,"mqray3",23);
-        User u4 = new User(4,"mqray4",26);
-        User u5 = new User(5,"mqray5",28);
-        List<User> list = Arrays.asList(u1,u2,u3,u4,u5);
-        list.stream()
-                .filter((user)->{return user.getAge()%2==0;})
-                .filter((user)->{return user.getAge()>23;})
-                .map((user)->{return user.getName().toUpperCase();})
-                .sorted((uu1,uu2)->{return uu2.compareTo(uu1);})
-                .limit(1)
-                .forEach(System.out::println);
+        User u2 = new User(1,"mqray1",12);
+//        User u2 = new User(2,"mqray2",14);
+        System.out.println(u1.equals(u2));
+        System.out.println(u1.hashCode());
+        System.out.println(u2.hashCode());
+//        User u3 = new User(3,"mqray3",23);
+//        User u4 = new User(4,"mqray4",26);
+//        User u5 = new User(5,"mqray5",28);
+//        List<User> list = Arrays.asList(u1,u2,u3,u4,u5);
+//        list.stream()
+//                .filter((user)->{return user.getAge()%2==0;})
+//                .filter((user)->{return user.getAge()>23;})
+//                .map((user)->{return user.getName().toUpperCase();})
+//                .sorted((uu1,uu2)->{return uu2.compareTo(uu1);})
+//                .limit(1)
+//                .forEach(System.out::println);
     }
 }
